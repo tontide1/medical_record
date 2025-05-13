@@ -1,6 +1,7 @@
 from app import create_app, db
 from werkzeug.security import generate_password_hash
 from datetime import datetime
+import os
 
 # Create the application instance
 app = create_app()
@@ -25,4 +26,7 @@ with app.app_context():
         db.session.commit()
 
 if __name__ == '__main__':
-    app.run()
+    # Use environment variables for host and port if available, with defaults if not
+    port = int(os.environ.get('PORT', 5000))
+    host = os.environ.get('HOST', '0.0.0.0')
+    app.run(host=host, port=port)

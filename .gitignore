@@ -24,7 +24,6 @@ wheels/
 # Flask
 instance/
 .webassets-cache
-.env
 .flaskenv
 venv/
 .venv/
@@ -47,7 +46,6 @@ venv/
 .DS_Store
 
 # Environment
-.env
 .venv
 env/
 venv/
